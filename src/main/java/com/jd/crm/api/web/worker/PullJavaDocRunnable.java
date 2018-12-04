@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
-import static sun.security.pkcs.PKCS8Key.version;
 
 /**
  * Create by maoyi on 2018/11/28
