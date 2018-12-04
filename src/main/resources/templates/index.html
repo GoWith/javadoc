@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)https://mvnrepository.com/artifact/org.activecomponents.jadex/jadex-tools-base-swing/usages -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Javadoc 首页</title>
+    <script type="application/javascript" src="/jquery.min.js"></script>
+</head>
+<body>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-size: 12px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 0.7em;
+        margin-top: 0.2em;
+        font-size: 18px;
+    }
+
+    h2 {
+        color: black;
+        font-size: 14px;
+    }
+
+    h3, #tabs {
+        color: #222222;
+        padding: 2px 10px;
+        margin-top: 10px;
+        font-size: 12px;
+        border: 1px solid #aaa;
+    }
+
+    #left h3 {
+        border: 1px solid #aaa;
+        font-size: 12px;
+        margin-top: 4px;
+        background: #efefef;
+        color: #175bb0;
+    }
+
+    #left ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 10px 0;
+    }
+
+    #left li {
+        padding-left: 7px;
+        padding-top: 4px;
+        padding-bottom: 0;
+        border-left: 4px solid #bbb;
+        font-size: 12px;
+        margin: 1px;
+        vertical-align: text-bottom;
+        min-height: 20px;
+        height: 0.8em;
+    }
+
+    #left li.selected {
+        background: #d7e6f6;
+    }
+
+    ul.repositories {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 10px 0;
+        text-align: left;
+    }
+
+    ul.repositories li {
+        padding-left: 7px;
+        padding-top: 4px;
+        padding-bottom: 0;
+        font-size: 12px;
+        margin: 1px;
+        vertical-align: text-bottom;
+        min-height: 20px;
+        height: 0.8em;
+    }
+
+    #header {
+        height: 48px;
+        border-top: 2px solid #ddd;
+        border-bottom: 1px solid #bbb;
+        background: #eee;
+        background: linear-gradient(to bottom, #fff, #eee);
+    }
+
+    #logo {
+        float: left;
+        padding: 3px 13px;
+    }
+
+    #logo .sub {
+        font-size: 10px;
+        color: #222;
+    }
+
+    #left {
+        position: absolute;
+        left: 0;
+        padding-left: 10px;
+        top: 65px;
+        width: 200px;
+    }
+
+    #right {
+        padding-left: 10px;
+        padding-right: 20px;
+        padding-top: 5px;
+        position: absolute;
+        right: 0;
+        top: 55px;
+        width: 290px;
+    }
+
+    #maincontent {
+        margin-left: 221px;
+        margin-right: 321px;
+        padding: 9px 10px 10px;
+        min-height: 1600px;
+        border-left: 1px solid #dfdfdf;
+        border-right: 1px solid #dfdfdf;
+    }
+
+    #footer {
+        text-align: center;
+        clear: both;
+        background-color: #F5F5F5;
+        padding: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #175bb0;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    #logo a:hover {
+        text-decoration: none;
+    }
+
+    #navigation {
+        position: absolute;
+        top: 22px;
+        right: 45px;
+        font-weight: bold;
+        font-size: 13px;
+        color: gray;
+    }
+
+    #search {
+        padding: 9px 7px 8px 15px;
+        position: relative;
+        margin-left: 221px;
+        margin-right: 321px;
+    }
+
+    #search input {
+        background: #fff;
+        border: 1px solid darkgray;
+        border-radius: 4px;
+        font-size: 14px;
+        height: 28px;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+    #search .textfield {
+        width: 60%;
+        color: #666;
+        outline: 0;
+        border: 1px solid #999;
+        text-shadow: none;
+    }
+
+    #search .button {
+        margin-left: 10px;
+        padding: 0 15px;
+        height: 28px;
+    }
+
+    ul.search-nav {
+        margin: 25px 0 20px 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+    }
+
+    ul.search-nav li {
+        display: inline;
+        background-color: #1857ad;
+        color: #fff;
+        padding: .2em 0;
+        margin: .2em;
+    }
+
+    .search-nav a {
+        text-decoration: none;
+        color: #fff;
+        padding: .2em 0.8em;
+    }
+
+    .search-nav span {
+        padding: .2em 0.8em;
+    }
+
+    .search-nav li.current {
+        background-color: #a9a9a9;
+    }
+
+    .adbox {
+        margin-top: 10px;
+    }
+
+    .snippet {
+        font-size: 12px;
+    }
+
+    .vbtn {
+        background: #FAFAFF;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        border-spacing: 0;
+        box-shadow: 1px 1px 1px #eee;
+        padding: 1px 4px;
+        white-space: nowrap;
+        vertical-align: baseline;
+    }
+
+    .vsc {
+        background: #FAFAFF;
+        border-radius: 4px;
+        border-spacing: 0;
+        padding: 1px 4px;
+        white-space: nowrap;
+        vertical-align: baseline;
+        line-height: 150%;
+    }
+
+    hr {
+        border-top: 1px solid #a9a9a9;
+    }
+
+    .rb {
+        display: block;
+        background: orange;
+        height: 5px;
+        box-shadow: 1px 1px 1px #999;
+    }
+
+    .pb {
+        width: 100%;
+    }
+
+    .pbv {
+        background: #dadada;
+        color: #356cb0;
+        height: 5px;
+    }
+
+    .beta {
+        background: #FAEAEF;
+    }
+
+    .alpha {
+        background: #FFCCDD;
+    }
+
+    .candidate {
+        background: #FAEAEF;
+    }
+
+    .sidebar {
+        background-color: #f5f5f5;
+    }
+
+    .t1 {
+        font-size: 12px;
+        color: #7b94b0;
+    }
+
+    .t2 {
+        font-size: 13px;
+        color: #6a89b0;
+    }
+
+    .t3 {
+        font-size: 14px;
+        color: #5880b0;
+    }
+
+    .t4 {
+        font-size: 16px;
+        color: #4676b0;
+    }
+
+    .t5 {
+        font-size: 18px;
+        color: #356cb0;
+    }
+
+    .t6 {
+        font-size: 19px;
+        color: #2363b0;
+    }
+
+    .t7 {
+        font-size: 24px;
+        color: #1259b0;
+    }
+
+    .cnt {
+        font-style: normal;
+        font-size: 11px;
+        padding: 1px 2px;
+        margin-left: 5px;
+        background-color: #efefef;
+        color: #444;
+        border-radius: 3px;
+    }
+
+    .b {
+        display: inline-block;
+        font-style: normal;
+        font-size: 11px;
+        padding: 2px 4px;
+        margin: 1px;
+        background-color: #d3d3d3;
+        color: white;
+    }
+
+    .tag {
+        border-left: 4px solid #478be0;
+        background-color: #175bb0;
+    }
+
+    .c {
+        text-align: center;
+        background-color: #df2d4f;
+    }
+
+    .lic {
+        text-align: center;
+        background-color: #5285c5;
+    }
+
+    .bookimg {
+        box-shadow: 4px 4px 2px #888888;
+    }
+
+    .breadcrumb {
+        padding: 6px 0 10px 0;
+        font-size: 13px;
+    }
+
+    .gridcontainer {
+        overflow-x: scroll;
+    }
+
+    table.grid {
+        border-spacing: 1px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        background-color: #e1e1e1;
+        color: #222;
+    }
+
+    table.grid td, th {
+        padding: 4px;
+    }
+
+    table.grid tbody th {
+        font-weight: bold;
+    }
+
+    table.grid tbody tr {
+        background-color: #FFF;
+        text-align: left;
+    }
+
+    table.grid tbody tr td {
+        background: #FFF;
+        border: 1px solid #FFF;
+    }
+
+    .im {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 1.5em;
+        font-size: 13px;
+    }
+
+    .im-category {
+        color: #555;
+        margin: 10px 0;
+    }
+
+    .im-usage {
+        color: #444;
+        background: #eeeeee;
+        padding: 1px 5px;
+        border-radius: 2px;
+        float: right;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+    .im-lic {
+        padding: 1px 5px;
+        float: right;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+    a:hover.im-usage {
+        text-decoration: none;
+    }
+
+    .im-title {
+        font-size: 13px;
+        margin-bottom: 0.8em
+    }
+
+    .im-title a {
+        color: black;
+    }
+
+    h2.im-title {
+        margin-top: 0.6em;
+        margin-bottom: 0.5em;
+    }
+
+    .im-subtitle {
+        color: #999;
+        font-size: 95%;
+        margin: 0;
+    }
+
+    .im-header {
+        margin-top: 1.5em;
+        margin-left: 65px;
+    }
+
+    .im-description {
+        margin-top: 1em;
+        margin-left: 65px;
+    }
+
+    .im-logo {
+        float: left;
+        margin-right: 1em;
+        border-radius: 4px;
+        padding: 2px;
+        box-shadow: 1px 1px 1px 1px #ccc;
+    }
+
+    .im-link {
+        color: #006a00;
+    }
+
+    .im-n {
+        color: #777777;
+        font-weight: normal
+    }
+
+    .version-section {
+        padding-bottom: 1.5em;
+    }
+</style>
+<div id="page">
+    <div id="header" style="text-align:center">
+        <div id="search">
+                <input class="textfield"
+                       placeholder="Search for groups, artifacts, categories"
+                       type="text" id="query" size="45" maxlength="100"
+                       name="q" value=""
+                       onfocus="var cur=this.value; this.value=&#39;&#39;; this.value=cur"
+                       autofocus=""/>
+                <input class="button" type="button" onclick="sub()"
+                       value="Search"/>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div id="left">
+
+    </div>
+    <div id="maincontent">
+        <div class="breadcrumb"><a href="https://mvnrepository.com/">Home</a> » <a
+                href="https://mvnrepository.com/artifact/org.activecomponents.jadex">org.activecomponents.jadex</a> » <a
+                href="https://mvnrepository.com/artifact/org.activecomponents.jadex/jadex-tools-base-swing">jadex-tools-base-swing</a>
+            » Usages
+        </div>
+        <h1>Artifacts using Jadex Tools Base Swing (8)</h1>
+        <div style="padding-bottom: 5px" id="sort"> Sort:
+            <b><u>popular</u></b>
+            |
+            <a href="https://mvnrepository.com/artifact/org.activecomponents.jadex/jadex-tools-base-swing/usages?sort=newest">newest</a>
+        </div>
+        <div id="list">
+            <div class="im">
+                <div class="im-header">
+                    <h2 class="im-title">
+                        <span style="font-weight: normal; font-size:90%; color:gray">1. </span>
+                        <a href="XX">Jadex Runtimetools Swing</a>
+                    </h2>
+                    <p class="im-subtitle"><a href="xx">org.activecomponents.jadex</a>» <a href="xx">jadex-runtimetools-swing</a>
+                    </p>
+                </div>
+                <div class="im-description">
+                    The Jadex rules tools package contains tools for the Jadex active components infrastructure.
+                    <div style="color: grey; font-size: 12px; padding-top: 1em">
+                        Last Release on Nov 27, 2018
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="search-nav">
+            <li class="current"><span>Prev</span></li>
+            <li class="current"><span>1</span></li>
+            <li class="current"><span>Next</span></li>
+        </ul>
+    </div>
+    <div id="right">
+
+    </div>
+</div>
+<div id="footer">
+    Copyright © 2006-2018 MvnRepository. All rights reserved.<br><span style="text-align: center">Web site developed by <a
+        href="https://twitter.com/frodriguez">@frodriguez</a></span><br><a href="mailto:info@mvnrepository.com">Contact
+    Us</a></div>
+</body>
+<script>
+    function sub() {
+        var query = document.getElementById("query").value;
+
+        var url = "/search";
+        var param = {
+            "query": query
+        };
+        jQuery.post(url, param, function (data) {
+            $("#list").empty()
+            data.forEach(function (item , index) {
+                var node = "<div class=\"im\">\n" +
+                    "                <div class=\"im-header\">\n" +
+                    "                    <h2 class=\"im-title\">\n" +
+                    "                        <span style=\"font-weight: normal; font-size:90%; color:gray\">"+ index +". </span>\n" +
+                    "                        <a href=\"XX\">"+item.artifactId+"</a>\n" +
+                    "                    </h2>\n" +
+                    "                    <p class=\"im-subtitle\"><a href=\"xx\">"+item.groupId+"</a>» <a href=\"xx\">"+item.artifactId+"</a>\n" +
+                    "                    </p>\n" +
+                    "                </div>\n" +
+                    "                <div class=\"im-description\">\n" + item.versionDescribe +
+                    "                    <div style=\"color: grey; font-size: 12px; padding-top: 1em\">\n" +
+                    "                        Last Release on Nov 27, 2018\n" +
+                    "                    </div>\n" +
+                    "                </div>\n" +
+                    "            </div>";
+                $("#list").append(node)
+            })
+        }, "json");
+    }
+</script>
+</html>

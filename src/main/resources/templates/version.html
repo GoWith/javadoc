@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>版本录入</title>
+    <script type="application/javascript" src="/jquery.min.js"></script>
+</head>
+<body>
+<div><span>groupId:</span><input type="text" id="groupId"/></div>
+<div><span>artifactId:</span><input type="text" id="artifactId"/></div>
+<div><span>version:</span><input type="text" id="version"/></div>
+<div><span>versionDescribe:</span><input type="text" id="versionDescribe"/></div>
+<div><input type="button" value="提交" onclick="sub()"/></div>
+</body>
+<script type="application/javascript">
+function sub() {
+    var groupId = document.getElementById("groupId").value;
+    var artifactId = document.getElementById("artifactId").value;
+    var version = document.getElementById("version").value;
+    var versionDescribe = document.getElementById("versionDescribe").value;
+
+    var url = "/version/save";
+    var param = {
+        "groupId":groupId,
+        "artifactId":artifactId,
+        "version":version,
+        "versionDescribe":versionDescribe
+    };
+    jQuery.post(url, param, function (data) {
+        alert(data);
+    }, "json");
+}
+</script>
+</html>
