@@ -33,7 +33,7 @@ public class Meta {
      * @throws java.io.IOException if any.
      * @throws org.jdom2.JDOMException if any.
      */
-    public static void main(String[] args) throws IOException, JDOMException {
+    public static void main1(String[] args) throws IOException, JDOMException {
         String groupId = "cn.fireface.call";
         String artifactId = "core";
         String version = "1.0-SNAPSHOT";
