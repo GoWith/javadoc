@@ -1,5 +1,6 @@
 package com.jd.crm.api.web.respository;
 
+import com.jd.crm.api.web.ApiWebApplication;
 import com.jd.crm.api.web.domain.ApiVersionEntity;
 import com.jd.crm.api.web.domain.RegistrarEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -16,17 +17,8 @@ import java.util.List;
  */
 @RepositoryDefinition(domainClass = ApiVersionEntity.class , idClass = String.class)
 public interface VersionMongoRepository extends MongoRepository<ApiVersionEntity,String>{
-    /**
-     * @param groupId groupId
-     * @param artifactId a
-     * @param version v
-     * @return
-     */
-    List<ApiVersionEntity> findByGroupIdLikeAndArtifactIdLikeAndVersionLike(String groupId, String artifactId, String version);
 
-    List<ApiVersionEntity> findByGroupIdLike(String groupId);
+    ApiVersionEntity findByGroupIdAndArtifactIdAndVersion(String groupId, String artifactId, String version);
 
-    List<ApiVersionEntity> findByArtifactIdLike(String artifactId);
-
-    List<ApiVersionEntity> findByArtifactIdLikeOrGroupIdLike(String artifactId, String groupId);
+    List<ApiVersionEntity> findByGroupIdAndArtifactId(String groupId, String artifactId);
 }

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0091)https://mvnrepository.com/artifact/org.activecomponents.jadex/jadex-tools-base-swing/usages -->
-<html>
+<!-- saved from url=(0082)https://mvnrepository.com/artifact/com.liumapp.qtools.collection/qtools-collection -->
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Javadoc 首页</title>
-    <script type="application/javascript" src="/jquery.min.js"></script>
+    <title>Maven Repository: com.liumapp.qtools.collection » qtools-collection</title>
 </head>
 <body>
 <style>
@@ -479,109 +478,140 @@
 <div id="page">
     <div id="header" style="text-align:center">
         <div id="search">
-                <input class="textfield"
-                       placeholder="Search for groups, artifacts, categories"
-                       type="text" id="query" size="45" maxlength="100"
-                       name="q" value=""
-                       onfocus="var cur=this.value; this.value=&#39;&#39;; this.value=cur"
-                       autofocus=""/>
-                <input class="button" type="button" onclick="sub()"
-                       value="Search"/>
+            <form action="https://mvnrepository.com/search"><input class="textfield"
+                                                                   placeholder="Search for groups, artifacts, categories"
+                                                                   type="text" id="query" size="45" maxlength="100"
+                                                                   name="q" value=""
+                                                                   onfocus="var cur=this.value; this.value=&#39;&#39;; this.value=cur"
+                                                                   autofocus=""><input class="button" type="submit"
+                                                                                       value="Search"></form>
         </div>
-        <div style="clear: both;"></div>
     </div>
     <div id="left">
-
     </div>
     <div id="maincontent">
-        <div class="breadcrumb"><a href="#">Home</a> » <a
-                href="#">group</a> » <a
-                href="#">artifact</a>
-            » Usages
+        <div class="breadcrumb"><a href="http://javadoc.crm.jd.com/">Home</a> » <a
+                href="#" th:text="${api.groupId}"></a>
+            » <span th:text="${api.artifactId}"></span>
         </div>
-        <h1>Artifacts register from crm javadoc</h1>
-        <div style="padding-bottom: 5px" id="sort"> Sort:
-            <b><u>popular</u></b>
-            |
-            <a href="#">newest</a>
+        <div class="im" style="border-bottom: none;padding-bottom: 0.5em">
+            <div class="im-header" style="margin-top: 0"><h2 class="im-title" style="font-size: 130%">
+                <a href="#" th:text="${api.artifactId}"></a></h2>
+                <p class="im-subtitle"></p></div>
+            <div class="im-description">
+            </div>
         </div>
-        <div id="list">
+        <br>
 
-        </div>
-        <ul class="search-nav">
-            <li class="current"><span>Prev</span></li>
-            <li class="current"><span>1</span></li>
-            <li class="current"><span>Next</span></li>
-        </ul>
-    </div>
-    <div id="right">
+        <br>
+        <style>
+            .vq {
+                padding: 2px;
+            }
+        </style>
+        <div>
+            <style>
+                .tabs, .tab_container {
+                    padding: 0
+                }
 
+                .tabs li {
+                    position: relative;
+                    float: left;
+                    list-style: none;
+                    padding-top: 7px;
+                }
+
+                .tabs li a {
+                    padding: 5px 10px 0 10px;
+                    margin-right: 2px;
+                    border-radius: 4px 4px 0 0;
+                    border: 1px solid gray;
+                    border-bottom-color: transparent;
+                }
+
+                .tabs .active a, .tabs .active a:hover {
+                    background-color: #fafafa;
+                    border: 1px solid gray;
+                    border-bottom-color: transparent;
+                    cursor: default;
+                    text-decoration: none;
+                }
+
+                .tab_container {
+                    clear: both;
+                    background-color: #fafafa;
+                }
+
+                .tab_content {
+                    display: none;
+                    padding: 10px;
+                    border: 1px solid gray;
+                    list-style: none;
+                }
+
+                .tab_container .active {
+                    display: block;
+                }
+
+                .msg {
+                    text-align: center;
+                    font-weight: bold;
+                    border: 2px solid #fff0f0;
+                    padding: 5px;
+                    margin-top: 5px;
+                    color: red;
+                    background-color: #fff8f8;
+                }
+            </style>
+            <div id="snippets">
+                <ul class="tabs">
+                    <li class="active"><a
+                            href="https://mvnrepository.com/artifact/com.liumapp.qtools.collection/qtools-collection">Central
+                        (10)</a></li>
+                </ul>
+                <div class="tab_container">
+                    <div class="tab_content active">
+                        <div class="gridcontainer">
+                            <table class="grid versions" width="100%">
+                                <thead>
+                                <tr>
+                                    <th rowspan="2" style="width: 1em"></th>
+                                    <th align="center">Version</th>
+                                    <th align="center" style="width: 10em;">Repository</th>
+                                    <th align="center" style="width: 10em;">Usages</th>
+                                    <th align="center" style="width: 10em;">Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="item : ${apiVersionEntities}">
+                                    <td rowspan="1">
+                                        <div><b>1.2</b>.x</div>
+                                    </td>
+                                    <td>
+                                        <!--<a href="#" th:href="@{'/javadoc/'+${item.groupId}}+'/'+${item.artifactId}}+'/'+${item.version}+'/index.html'}">-->
+                                        <a href="#"
+                                           th:href="@{'/javadoc/' + ${item.groupId} + '/' + ${item.artifactId} + '/'+${item.version}+'/index.html'}"
+                                           class="vbtn release" th:text="${item.version}"></a></td>
+                                    <td><a class="b lic" href="#">Crm Javadoc</a></td>
+                                    <td>
+                                        <a href="#">1</a><span
+                                            class="rb" style="width: 57px;"></span></td>
+                                    <td>Dec, 2018</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
 <div id="footer">
     Copyright © 2006-2018 MvnRepository. All rights reserved.<br><span style="text-align: center">Web site developed by <a
-        href="#">@maoyi</a></span><br><a href="mailto:maoyi@jd.com">Contact
+        href="https://twitter.com/frodriguez">@frodriguez</a></span><br><a href="mailto:info@mvnrepository.com">Contact
     Us</a></div>
 </body>
-<script>
-    var search  = window.location.search;
-    if(search.length > 1){
-        var url = "/search"+search;
-        var param = {
-        };
-        jQuery.post(url, param, function (data) {
-            $("#list").empty()
-            data.forEach(function (item , index) {
-                var node = "<div class=\"im\">\n" +
-                    "                <div class=\"im-header\">\n" +
-                    "                    <h2 class=\"im-title\">\n" +
-                    "                        <span style=\"font-weight: normal; font-size:90%; color:gray\">"+ index +". </span>\n" +
-                    "                        <a href=\"/artifact?groupId="+item.groupId+"&artifactId="+item.artifactId+"\">"+item.artifactId+"</a>\n" +
-                    "                    </h2>\n" +
-                    "                    <p class=\"im-subtitle\"><a href=\"/index?groupId="+item.groupId+"\">"+item.groupId+"</a>» <a href=\"/artifact?groupId="+item.groupId+"&artifactId="+item.artifactId+"\">"+item.artifactId+"</a>\n" +
-                    "                    </p>\n" +
-                    "                </div>\n" +
-                    "                <div class=\"im-description\">\n" + item.moduleDescribe +
-                    "                    <div style=\"color: grey; font-size: 12px; padding-top: 1em\">\n" +
-                    "                        Last Release on Nov 27, 2018\n" +
-                    "                    </div>\n" +
-                    "                </div>\n" +
-                    "            </div>";
-                $("#list").append(node)
-            })
-        }, "json");
-    }else {
-        sub();
-    }
-
-    function sub() {
-        var query = document.getElementById("query").value;
-
-        var url = "/searchQuickly";
-        var param = {
-            "query": query
-        };
-        jQuery.post(url, param, function (data) {
-            $("#list").empty()
-            data.forEach(function (item , index) {
-                var node = "<div class=\"im\">\n" +
-                    "                <div class=\"im-header\">\n" +
-                    "                    <h2 class=\"im-title\">\n" +
-                    "                        <span style=\"font-weight: normal; font-size:90%; color:gray\">"+ index +". </span>\n" +
-                    "                        <a href=\"/artifact?groupId="+item.groupId+"&artifactId="+item.artifactId+"\">"+item.artifactId+"</a>\n" +
-                    "                    </h2>\n" +
-                    "                    <p class=\"im-subtitle\"><a href=\"/index?groupId="+item.groupId+"\">"+item.groupId+"</a>» <a href=\"/artifact?groupId="+item.groupId+"&artifactId="+item.artifactId+"\">"+item.artifactId+"</a>\n" +
-                    "                    </p>\n" +
-                    "                </div>\n" +
-                    "                <div class=\"im-description\">\n" + item.versionDescribe +
-                    "                    <div style=\"color: grey; font-size: 12px; padding-top: 1em\">\n" +
-                    "                        Last Release on Nov 27, 2018\n" +
-                    "                    </div>\n" +
-                    "                </div>\n" +
-                    "            </div>";
-                $("#list").append(node)
-            })
-        }, "json");
-    }
-</script>
 </html>

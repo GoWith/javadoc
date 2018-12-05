@@ -51,7 +51,7 @@ public class Javadoc {
     @RequestMapping(value = "/{groupId}/{artifactId}/{version}/**", method = RequestMethod.GET)
     public ResponseEntity<InputStreamResource> exportXls(@PathVariable String artifactId, @PathVariable String version, @PathVariable String groupId) {
         String requestURI = request.getRequestURI();
-        String url = requestURI.substring("javadoc".length()+1).substring(artifactId.length()+1).substring(version.length()+1).substring(1);
+        String url = requestURI.substring("javadoc".length()+1).substring(groupId.length()+1).substring(artifactId.length()+1).substring(version.length()+1).substring(1);
         try {
             File file = new File("javadoc" + "/" + groupId + "/" + artifactId + "/"+artifactId+"-"+version.substring(0,version.indexOf("-"))+"-javadoc.jar");
             JarFile jarFile = new JarFile(file);
