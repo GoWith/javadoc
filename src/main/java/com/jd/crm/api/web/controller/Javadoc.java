@@ -1,8 +1,12 @@
 package com.jd.crm.api.web.controller;
 
 import com.jd.crm.api.web.context.RegisterService;
+import com.jd.crm.api.web.domain.ApiVersionEntity;
 import com.jd.crm.api.web.domain.RegistrarEntity;
 import com.jd.crm.api.web.respository.RegisterMongoRepository;
+import com.jd.crm.api.web.worker.PullJavaDocCallable;
+import com.jd.crm.api.web.worker.PullJavaDocRunnable;
+import com.jd.crm.api.web.worker.SingletonThreadPool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.InputStreamResource;
@@ -21,6 +25,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
@@ -54,6 +60,13 @@ public class Javadoc {
         String url = requestURI.substring("javadoc".length()+1).substring(groupId.length()+1).substring(artifactId.length()+1).substring(version.length()+1).substring(1);
         try {
             File file = new File("javadoc" + "/" + groupId + "/" + artifactId + "/"+artifactId+"-"+version.substring(0,version.indexOf("-"))+"-javadoc.jar");
+            if (!file.exists()) {
+                Future<Boolean> submit = SingletonThreadPool.getThreadPoolInstance().submit(new PullJavaDocCallable(new ApiVersionEntity(groupId, artifactId, version)));
+                Boolean pullSuccess = submit.get();
+                if(!pullSuccess){
+                    return null;
+                }
+            }
             JarFile jarFile = new JarFile(file);
             Enumeration<JarEntry> entries = jarFile.entries();
             while (entries.hasMoreElements()) {
@@ -73,44 +86,7 @@ public class Javadoc {
                             .body(new InputStreamResource(inputStream));
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return null;
-
-    }
-
-
-    /**
-     * <p>index.</p>
-     *
-     * @return a {@link org.springframework.http.ResponseEntity} object.
-     */
-    @RequestMapping(value = "/index.html", method = RequestMethod.GET)
-    public ResponseEntity<InputStreamResource> index() {
-        String groupId = "cn.fireface.call";
-        String artifactId = "core";
-        String version = "1.0-SNAPSHOT";
-        HttpHeaders headers = new HttpHeaders();
-
-        try {
-            File file = new File("javadoc" + "/" + artifactId + "/"+artifactId+"-"+version.substring(0,version.indexOf("-"))+"-javadoc.jar");
-            JarFile jarFile = new JarFile(file);
-            Enumeration<JarEntry> entries = jarFile.entries();
-            while (entries.hasMoreElements()) {
-                JarEntry jarEntry = entries.nextElement();
-                String name = jarEntry.getName();
-                if (name.equals("index.html")) {
-                    InputStream inputStream = jarFile.getInputStream(jarEntry);
-
-                    return ResponseEntity
-                            .ok()
-                            .contentType(MediaType.parseMediaType("text/html"))
-                            .body(new InputStreamResource(inputStream));
-                }
-            }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
