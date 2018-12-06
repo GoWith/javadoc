@@ -581,6 +581,7 @@
                                     <th align="center" style="width: 10em;">Repository</th>
                                     <th align="center" style="width: 10em;">Usages</th>
                                     <th align="center" style="width: 10em;">Date</th>
+                                    <th align="center">Maven</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -593,11 +594,29 @@
                                         <a href="#"
                                            th:href="@{'/javadoc/' + ${item.groupId} + '/' + ${item.artifactId} + '/'+${item.version}+'/index.html'}"
                                            class="vbtn release" th:text="${item.version}"></a></td>
-                                    <td><a class="b lic" href="#">Crm Javadoc</a></td>
+                                    <td><a class="b lic" href="#" th:href="@{'/javadoc/' + ${item.groupId} + '/' + ${item.artifactId} + '/'+${item.version}+'/index.html'}">Crm Javadoc</a></td>
                                     <td>
                                         <a href="#">1</a><span
                                             class="rb" style="width: 57px;"></span></td>
                                     <td>Dec, 2018</td>
+                                    <!--<td th:text="'&lt;!&#45;&#45; https://mvnrepository.com/artifact/io.zipkin.zipkin2/zipkin-storage-cassandra-v1 &#45;&#45;&gt;-->
+                                            <!--&lt;dependency&gt;-->
+                                                <!--&lt;groupId&gt;io.zipkin.zipkin2&lt;/groupId&gt;-->
+                                                <!--&lt;artifactId&gt;zipkin-storage-cassandra-v1&lt;/artifactId&gt;-->
+                                                <!--&lt;version&gt;2.11.10&lt;/version&gt;-->
+                                            <!--&lt;/dependency&gt;'"-->
+                                    <!--&gt;</td>-->
+                                    <td>
+                                        <textarea id="maven-a" readonly="true" rows="5" cols="10" style="width: 100%" class="snippet"
+                                            th:text="'
+&lt;dependency&gt;
+    &lt;groupId&gt;'+${item.groupId}+'&lt;/groupId&gt;
+    &lt;artifactId&gt;'+${item.artifactId}+'&lt;/artifactId&gt;
+    &lt;version&gt;'+${item.version}+'&lt;/version&gt;
+&lt;/dependency&gt;'"
+                                        >
+                                        </textarea>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
