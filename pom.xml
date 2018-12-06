@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jd.crm</groupId>
+    <groupId>cn.fireface</groupId>
     <artifactId>api-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -87,14 +87,14 @@
     </dependencies>
     <distributionManagement>
         <repository>
-            <id>jd-central</id>
+            <id>fireface-central</id>
             <name>libs-releases</name>
-            <url>http://artifactory.jd.com/libs-releases-local</url>
+            <url>http://artifactory.fireface.com/libs-releases-local</url>
         </repository>
         <snapshotRepository>
-            <id>jd-snapshots</id>
+            <id>fireface-snapshots</id>
             <name>libs-snapshots</name>
-            <url>http://artifactory.jd.com/libs-snapshots-local</url>
+            <url>http://artifactory.fireface.com/libs-snapshots-local</url>
         </snapshotRepository>
     </distributionManagement>
 

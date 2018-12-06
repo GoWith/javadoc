@@ -16,7 +16,7 @@ public class OpenBrowserCommandRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        String cmd = "cmd /c start chrome javadoc.crm.jd.com";
+//        String cmd = "cmd /c start chrome javadoc.fireface.cn";
 //        Runtime run = Runtime.getRuntime();
 //        try {
 //            run.exec(cmd);

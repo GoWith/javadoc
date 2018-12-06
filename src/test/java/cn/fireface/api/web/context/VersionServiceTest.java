@@ -22,24 +22,7 @@ public class VersionServiceTest {
 
     @Test
     public void save() {
-        ApiVersionEntity apiVersionEntity = new ApiVersionEntity();
-        apiVersionEntity.setGroupId("com.jd.pop.crm");
-        apiVersionEntity.setArtifactId("pop-crm-points-client");
-        apiVersionEntity.setVersion("3.0.0-SNAPSHOT");
-        apiVersionEntity.setVersionDescribe("积分中心javadoc");
-        apiVersionEntity.setModifiedErp("test");
-        apiVersionEntity.setModifiedEmail("test@jd.com");
 
-        versionService.save(apiVersionEntity);
-        ApiVersionEntity entity = new ApiVersionEntity();
-        entity.setGroupId("com.jd.pop.crm");
-        entity.setArtifactId("pop-crm-points-client");
-        entity.setVersion("2.5.6-SNAPSHOT");
-        entity.setVersionDescribe("积分中心javadoc");
-        entity.setModifiedErp("test");
-        entity.setModifiedEmail("test@jd.com");
-
-        versionService.save(entity);
     }
 
     @Test

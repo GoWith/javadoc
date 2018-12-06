@@ -50,26 +50,6 @@ public class Meta {
             System.out.println(jarEntry.getName());
         }
 
-
-//
-//        String url = "http://artifactory.jd.com/libs-snapshots-local";
-//
-//        SAXBuilder builder = new SAXBuilder(false);
-//        Document document = builder.build(url+"/"+groupId.replace(".","/") +"/"+artifactId+"/"+version+"/maven-metadata.xml");
-//
-//        Element employees = document.getRootElement();
-//        List employeeList = employees.getChildren("versioning");
-//        Element snapshot = ((Element) employeeList.get(0)).getChild("snapshot");
-//        Element timestamp = snapshot.getChild("timestamp");
-//        Element buildNumber = snapshot.getChild("buildNumber");
-//
-//        File dir = new File("javadoc");
-//        if (!dir.exists()) {
-//            dir.mkdir();
-//        }
-//
-//        File file = new File("javadoc" + "/" + artifactId + "/"+artifactId+"-"+version.substring(0,version.indexOf("-"))+"-javadoc.jar");
-//        FileUtils.copyURLToFile(new URL(url+"/"+groupId.replace(".","/")+"/"+artifactId+"/"+version+"/"+artifactId+"-"+version.substring(0,version.indexOf("-"))+"-"+timestamp.getText()+"-"+buildNumber.getValue()+"-javadoc.jar"),file);
     }
 
     /**
@@ -87,7 +67,7 @@ public class Meta {
             Element timestamp = snapshot.getChild("timestamp");
             Element buildNumber = snapshot.getChild("buildNumber");
 
-            String s = "http://artifactory.jd.com/libs-snapshots-local/cn/fireface/call/core/1.0-SNAPSHOT" +
+            String s = "http://artifactory.fireface.cn/libs-snapshots-local/cn/fireface/call/core/1.0-SNAPSHOT" +
                     "core-1.0-20181127.020929-19-javadoc.jar";
         } catch (JDOMException | IOException e) {
             e.printStackTrace();
