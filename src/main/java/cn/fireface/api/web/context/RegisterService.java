@@ -42,8 +42,6 @@ public class RegisterService {
      */
     public void save(){
         RegistrarEntity registrarEntity = new RegistrarEntity();
-        registrarEntity.setAppLeaderEmail("maoyi12");
-        registrarEntity.setAppLeaderEmail("maoyi@jd.com");
         mongoRepository.insert(registrarEntity);
     }
 }
