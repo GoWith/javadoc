@@ -1,6 +1,5 @@
 package com.jd.crm.api.web.controller;
 
-import com.jd.common.web.LoginContext;
 import com.jd.crm.api.web.context.RegisterService;
 import com.jd.crm.api.web.context.VersionService;
 import com.jd.crm.api.web.domain.ApiVersionEntity;
@@ -42,9 +41,6 @@ public class VersionController {
     @PostMapping("/save")
     public @ResponseBody
     String save(ApiVersionEntity versionEntity) {
-        LoginContext loginContext = LoginContext.getLoginContext();
-        versionEntity.setModifiedErp(loginContext.getPin());
-        versionEntity.setModifiedEmail(loginContext.getEmail());
         versionService.save(versionEntity);
         return "SUCCESS";
     }

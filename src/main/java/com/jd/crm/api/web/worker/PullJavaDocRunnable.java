@@ -31,7 +31,7 @@ public class PullJavaDocRunnable implements Runnable{
         String groupId = apiVersionEntity.getGroupId();
         String artifactId = apiVersionEntity.getArtifactId();
         String version = apiVersionEntity.getVersion();
-        String url = "http://artifactory.jd.com/libs-snapshots-local";
+        String url = "http://artifactory.fireface.com/libs-snapshots-local";
 
         try {
             SAXBuilder builder = new SAXBuilder(false);
