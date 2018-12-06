@@ -19,10 +19,10 @@ import java.util.jar.JarFile;
 import java.util.jar.JarInputStream;
 
 /**
- * Create by maoyi on 2018/11/27
+ * Create by 灰色十三月 on 2018/11/27
  * don't worry be happy!
  *
- * @author maoyi
+ * @author 灰色十三月
  * @version $Id: $Id
  */
 public class Meta {

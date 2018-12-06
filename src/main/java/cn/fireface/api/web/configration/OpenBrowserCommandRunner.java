@@ -5,10 +5,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 /**
- * Create by maoyi on 2018/12/4
+ * Create by 灰色十三月 on 2018/12/4
  * don't worry be happy!
  *
- * @author maoyi
+ * @author 灰色十三月
  */
 @Component
 public class OpenBrowserCommandRunner implements CommandLineRunner {

@@ -4,10 +4,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
- * Create by maoyi on 2018/12/4
+ * Create by 灰色十三月 on 2018/12/4
  * don't worry be happy!
  *
- * @author maoyi
+ * @author 灰色十三月
  */
 public class SpringBootStartApplication extends SpringBootServletInitializer {
     @Override
